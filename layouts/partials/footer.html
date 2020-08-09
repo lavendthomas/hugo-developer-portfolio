@@ -45,6 +45,7 @@
   // Dark theme support
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.getElementById('body').classList.add('uk-light');
+    try { document.getElementById('github_logo').src = '/img/GitHub-Mark-Light-120px-plus.png' } catch {};
   } else {
     if (document.getElementById('body').classList.contains('uk-light')) {
       document.getElementById('body').classList.remove('uk-light');
