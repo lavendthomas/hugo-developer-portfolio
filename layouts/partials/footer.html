@@ -40,3 +40,15 @@
 {{ range .Site.Params.plugins.js}}
 <script src="{{ .URL | absURL }}"></script>
 {{ end }}
+
+<script>
+  // Dark theme support
+  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.getElementById('body').classList.add('uk-light');
+  } else {
+    if (document.getElementById('body').classList.contains('uk-light')) {
+      document.getElementById('body').classList.remove('uk-light');
+    }
+  }
+</script>
+
