@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<section class="uk-margin-large-bottom">
+    <div class="uk-container">
+        <ul class="uk-list">
+            {{ range .Data.Pages.ByPublishDate.Reverse }}
+            <li>
+                <article class="uk-article">
+                    <h1 class="uk-article-title"><a class="uk-link-reset" href="{{.Permalink | relURL}}">{{.Title}}</a></h1>
+
+                    <p class="uk-article-meta">Written by {{.Params.author }} on {{ .Date.Format "Jan 2 2006"}}.</p>
+
+                    <p class="uk-text-lead">{{.Params.description}}</p>
+
+                    <p>{{.Summary}}</p>
+
+                    <div class="uk-grid-small uk-child-width-auto" uk-grid>
+                        <div>
+                            <a href="{{.Permalink | relURL}}" class="uk-button uk-button-text">Read more</a>
+                        </div>
+                    </div>
+                    <p/>
+                </article>
+
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+
+</section>
+
+{{ end }}
