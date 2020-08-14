@@ -1,4 +1,5 @@
 ![GitHub](https://img.shields.io/github/license/samrobbins85/hugo-developer-portfolio?style=for-the-badge)
+
 # Developer Portfolio
 
 ![Website Image](https://res.cloudinary.com/samrobbins/image/upload/v1591885280/screenshot_aexm2m.png)
@@ -43,11 +44,7 @@ theme="hugo-developer-portfolio"
 
 ### Creating a new site
 
-If you just want to get set up with a new site, you can start from the Example Site I have provided. To do this:
-
-1. Cut the `exampleSite` folder out of the theme and paste it wherever you want
-2. Create a `theme` directory within the `exampleSite folder`
-3. Paste the theme into this directory, ensuring is has the name `hugo-developer-portfolio`
+The exampleSite folder is all set up to work as a site, just copy it out of the Git repo and it will work. You need to have golang installed as it uses [hugo modules](https://gohugo.io/hugo-modules/use-modules/).
 
 ## Configuration
 
@@ -187,6 +184,32 @@ skill:
       description: Details coming soon, contact me if you want to know more
 ```
 
+#### portfolio
+
+This is used to highlight specific portfolio projects you want to show
+
+- `enable` can be used to hide this section
+- `title` is the text at the top each item
+- `image` is the image for each item
+- `description` goes underneath the image for each item
+- `link` directs to the main portfolio page
+- `tools` indicates what technologies you used, it uses the icons from https://simpleicons.org/
+
+```yml
+portfolio:
+  enable: true
+  item:
+    - title: Easy DMARC
+      image: https://res.cloudinary.com/samrobbins/image/upload/v1597159067/Easy_DMARC_hkcgif.webp
+      description: A website to make it easy to add DMARC to a Vercel website
+      link: "/portfolio/easy-dmarc"
+      tools:
+        - next-dot-js
+        - tailwindcss
+        - vercel
+        - react
+```
+
 #### experience
 
 - `enable` can be used to hide this section
@@ -218,7 +241,6 @@ hackathons:
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793405/stickers/Hack_Cambridge_101_ozoq5d.png
       url: none
 ```
-
 
 #### certifications
 
@@ -260,10 +282,8 @@ education:
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793268/logos/logos_Durham_fc2sae.svg
 ```
 
-
-
-
 ### `about.yml`
+
 This file configures the about page, and follows the format below:
 
 ```yml
@@ -277,6 +297,7 @@ leadership:
 ```
 
 ### `porfolio.yml`
+
 This file configures the portfolio page, allowing you to specify the filters you want to use.
 
 ```yml
@@ -284,7 +305,6 @@ filter:
   - label: Web Dev
     value: web-dev
 ```
-
 
 ### Blogs
 
