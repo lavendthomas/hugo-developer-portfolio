@@ -82,6 +82,34 @@
     padding: 8px;
   }
 
+
+  @media (prefers-color-scheme: light) {
+    blockquote {
+      border-left: 4px solid #222;
+      padding: 0 70px 0 15px !important;
+      display: block;
+      margin: 1em 10px;
+      font-style: normal;
+      font-size: medium;
+    }
+    blockquote p {
+      color: #222;
+    }
+  }
+  @media (prefers-color-scheme: dark) {
+    blockquote {
+      border-left: 4px solid #ccc;
+      padding: 0 70px 0 10px !important;
+      display: block;
+      margin: 1em 10px;
+      font-style: normal;
+      font-size: medium;
+    }
+    blockquote p {
+      color: #aaaaaa;
+    }
+  }
+
 </style>
 
 
