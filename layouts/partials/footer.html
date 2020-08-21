@@ -19,14 +19,13 @@
 
     </div>
 
+  {{ $cc = resources.Get "images/cc.png" }}
+  {{ $by = resources.Get "images/by.png" }}
 
-
-
-
-  <div class="footer-copyright uk-text-center" style="padding-bottom: 1rem">
-    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1.2em;
+    <div class="footer-copyright uk-text-center" style="padding-bottom: 1rem">
+    <img loading="lazy" src="{{ $cc.Permalink }}" style="height: 1.2em;
   width: 1.2em;" alt="Creative Commons">
-    <img loading="lazy" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1.2em;
+    <img loading="lazy" src="{{ by.Permalink }}" style="height: 1.2em;
   width: 1.2em;" alt="CC-BY">
     2020
     {{.Site.Params.Author}}
@@ -35,6 +34,7 @@
   </div>
 </footer>
 
+{{ $githubLight = resources.Get "images/GitHub-Mark-Light-120px-plus.png" }}}
 
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range .Site.Params.plugins.js}}
@@ -45,7 +45,7 @@
   // Dark theme support
   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     document.getElementById('body').classList.add('uk-light');
-    try { document.getElementById('github_logo').src = '/img/GitHub-Mark-Light-120px-plus.png' } catch {};
+    try { document.getElementById('github_logo').src = '{{ $githubLight.Permalink }}' } catch {};
   } else {
     if (document.getElementById('body').classList.contains('uk-light')) {
       document.getElementById('body').classList.remove('uk-light');
