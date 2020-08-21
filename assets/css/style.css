@@ -1,6 +1,6 @@
-@import "playfair.css";
-@import "roboto.css";
-@import "merriweather.css";
+@import "/css/playfair.css";
+@import "/css/roboto.css";
+@import "/css/merriweather.css";
 
 
 .contain {
